@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+.button {
+	display: none;
+}
+
+
+    </style>
+</head>
+
+<body>
+	<button type="submit" class="button">I'll Reserve </button>
+
+    <script>
+    function HotelConstructor(nights,available) {
+        this.nights = nights;
+        this.available = available;
+        
+        this.checkAvailability = function() {
+
+            if (parseInt(this.nights) <= this.available) {
+                document.getElementsByClassName("button")[0].style.display='block';
+            } else {
+                alert("Sorry, no free room for " + this.nights + " nights");
+
+            }
+        }
+    }
+var nights = prompt("how many nights you need");
+var available1 = Math.floor((Math.random() * 10) +1);
+var available2 = Math.floor((Math.random() * 10) +1);
+var available3 = Math.floor((Math.random() * 10) +1);  
+var hotel1 = new HotelConstructor(nights,available1), hotel2 = new HotelConstructor(nights,available2), hotel3 = new HotelConstructor(nights,available3);
+
+hotel1.checkAvailability();
+
+    // var Hotel = {
+    //     available;
+
+
+   
+    </script>
+</body>
+
+</html>
