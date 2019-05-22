@@ -5,9 +5,31 @@
     <title></title>
 
     <style>
+		* {
+			box-sizing: border-box;
+		}
+
+		#main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin: auto;
+			width: 400px;
+			height: 600px;
+			border: 2px solid #dd0;
+		}
+
+		#display {
+			background-color: #333;
+			width: 100%;
+			height: 250px;
+			font-size: 75px;
+			color: #eee;
+		}
+
     	button {
-    		width: 40px;
-    		height: 40px;
+    		width: 70px;
+    		height: 70px;
     		padding: 3px;
     	}
     	
@@ -15,54 +37,69 @@
 </head>
 
 <body>
-	<div class="main">
-		<div class="display">
-			<div class="buttons">
-				<div class="numbers">
+	<div id="main">
+		<div id="display">0</div>
+		<div id="buttons">
+			<div id="numbers">
 
-					<div class="row">
-						<button>+</button>
-						<button>-</button>
-						<button>X</button>
-					</div>
-					<div class="row">
-						<button>7</button>
-						<button>8</button>
-						<button>9</button>
-						
-					</div>
-					<div class="row">
-						<button>4</button>
-						<button>5</button>
-						<button>6</button>
-						
-					</div>
-					<div class="row">
-						<button>1</button>
-						<button>2</button>
-						<button>3</button>
-						
-					</div>
-					<div class="row">
-						<button>0</button>
-						<button>.</button>
-						<button>AC</button>
-					</div>
+				<div class="row">
+					<button id="plus" value="+">+</button>
+					<button id="minus" value="-">-</button>
+					<button id="multi" value="*">X</button>
 				</div>
-			
-				<div class="column">
-					<button>/</button>
-					<button>=</button>
-						
+				<div class="row">
+					<button id="seven" value="7">7</button>
+					<button id="eight" value="8">8</button>
+					<button id="nine" value="9">9</button>
 					
 				</div>
+				<div class="row">
+					<button id="four" value="4">4</button>
+					<button id="five" value="5">5</button>
+					<button id="six" value="6">6</button>
+					
+				</div>
+				<div class="row">
+					<button id="one" value="1">1</button>
+					<button id="two" value="2">2</button>
+					<button id="three" value="3">3</button>
+					
+				</div>
+				<div class="row">
+					<button id="zero" value="0">0</button>
+					<button id="comma" value=".">.</button>
+					<button id="reset" value="0">AC</button>
+				</div>
+			</div>
+		
+			<div class="column">
+				<button id="divide" value="/">/</button>
+				<button id="equal" value="=">=</button>
+					
+				
 			</div>
 		</div>
+		
 	</div>
 	
 	
 
     <script>
+
+    	function getButtonValue(i){    		
+    		document.getElementById("display").innerHTML += btn[i].value;
+
+    	}
+
+    	var btn = document.getElementsByTagName('button');
+    		for (let i = 0; i < btn.length; i++) {
+    			btn[i].onclick = function() {
+    				getButtonValue(i)
+    			};
+    		}
+
+
+
     </script>
 </body>
 
