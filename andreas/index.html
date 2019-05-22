@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="basic01"></p>
+	<hr>
+	<p id="basic02"></p>
+	<hr>
+	<p id="basic03"></p>
+	<hr>
+
+	<script>
+		// basic exercise 1 - age
+		(function(){
+			var today = new Date(), x;
+			//x = prompt('enter your birth year');
+			document.getElementById('basic01').innerHTML = today.getFullYear() - parseInt(1982);
+
+		}());
+
+		// basic exercise 2 - truncate
+		(function(){
+			var text = 'I am a hero from World of Warcraft';
+			document.getElementById('basic02').innerHTML = text.slice(0, 12);
+
+		}());
+
+		// Basic exercise 3 | Personal information
+		(function(name, surname, age, text){
+			document.getElementById('basic03').innerHTML = 'Hi, I am ' + name + ' ' +
+				surname + ', I am ' + age + text;
+
+		}('Andreas', 'Harasztosi', 36, ' years old and I am a scuba diver.'));
+
+	</script>
+
+</body>
+</html>
